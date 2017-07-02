@@ -1,0 +1,182 @@
+{
+	"welcome": {
+	  "en":"",
+	  "de":""
+	},
+	"recommended": {
+	  "en":"recommended",
+	  "de":"empfohlen"
+	},
+	"select": {
+	  "en":"Select source files",
+	  "de":"Quelldateien auswählen"
+	},
+	"parent": {
+	  "en":"Parent photo to be converted into a mosaic",
+	  "de":"Elternfoto, das zum Mosaik werden soll"
+	},
+	"parent_tip": {
+	  "en":"It's best to use an image with not too much detail. A portrait would be a good choice.",
+	  "de":"Ein Bild ohne zu viele Details funktioniert am besten. Ein Portrait wäre z.B. eine gute Wahl."
+	},
+	"source": {
+	  "en":"Photos out of which to create the mosaic",
+	  "de":"Fotos, aus denen das Mosaik bestehen soll"
+	},
+	"source_tip": {
+	  "en":"Select a folder with at least about 20 photos, the more the better. This is one rare case where quantity is better than quality.",
+	  "de":"Wählen Sie einen Ordner mit mindestens etwa 20 Fotos, je mehr, desto besser. Dies ist einer der wenigen Fälle, wo Quantität über Qualität geht. "
+	},
+	"too_few": {
+	  "en":"Select a folder with at least 20 photos. Files in subdirectories of this folder are ignored.",
+	  "de":"Wählen Sie einen Ordner mit mindestens 20 Fotos. Dateien in Unterverzeichnissen dieses Ordners werden ignoriert."
+	},
+	"start": {
+	  "en":"Create Mosaic",
+	  "de":"Mosaik erstellen"
+	},
+	"processing": {
+	  "en":"Your mosaic is being created...",
+	  "de":"Ihr Mosaik wird erstellt..."
+	},
+	"scaling": {
+	  "en":"Scaling up parent image",
+	  "de":"Elternbild vergrößern"
+	},
+	"copy": {
+	  "en":"Copying and scaling down images",
+	  "de":"Bilder kopieren und verkleinern"
+	},
+	"thumbs": {
+	  "en":"Creating image cache",
+	  "de":"Bildzwischenspeicher erstellen"
+	},
+	"prep": {
+	  "en":"Analysing images and image parts",
+	  "de":"Bilder und Bildteile analysieren"
+	},	
+	"gen": {
+	  "en":"Matching and positioning images",
+	  "de":"Bilder zuordnen und positionieren"
+	},
+	"work": {
+	  "en":"Improving mosaic",
+	  "de":"Mosaik verbessern"
+	},
+	"merge": {
+	  "en":"Assembling final image",
+	  "de":"Bild zusammensetzen"
+	},
+	"advanced": {
+	  "en":"Advanced settings",
+	  "de":"Erweiterte Einstellungen"
+	},
+	"advanced_tip": {
+	  "en":"You can adjust these settings to your liking. The recommended settings are preselected.",
+	  "de":"Sie könnnen diese Einstellungen nach Ihren Wünschen anpassen. Die empfohlenen Einstellungen sind bereits ausgewählt."
+	},
+	"res": {
+	  "en":"Resolution",
+	  "de":"Auflösung"
+	},
+	"res_tip": {
+	  "en":"From how many single images the mosaic will be constructed. The higher this number, the more realistic the parent image will appear, however the small images will be less recognisable. The setting determines the horizontal resolution.",
+	  "de":"Aus wie vielen einzelnen Bildern das Mosaik zusammengesetzt wird. Je mehr, desto realistischer wird das Elternbild, dafür werden die kleinen Bilder weniger erkenntlich. Die Einstellung gibt die horizontale Auflösung an."
+	},
+	"ratio": {
+	  "en":"Size",
+	  "de":"Größe"
+	},
+	"ratio_tip": {
+	  "en":"The size of the parent image can be increased so that it is later possible to zoom in and view the small images of the mosaic at an appropriate size. The sizes are calculated for a print of standard resolution.",
+	  "de":"Das Elternbild kann vergrößert werden, damit später ins Mosaik hineingezoomt werden kann, um die kleinen Bilder in angemessener Größe zu betrachten. Die Größenangaben gelten für einen Ausdruck mit herkömmlicher Auflösung."
+	},
+	"thresh": {
+	  "en":"Usage threshold",
+	  "de":"Nutzschwelle"
+	},
+	"thresh_tip": {
+	  "en":"Single images will not be put side by side, but instead, for an improved result, only may be reused at a certain distance from eachother. ",
+	  "de":"Einzelne Bilder werden nicht direkt nebeneinander wieder verwendet, sondern für eine bessere Optik erst in einem bestimmten Abstand voneinander."
+	},
+	"no_improve": {
+	  "en":"Do not improve contrast nor colour",
+	  "de":"Kontrast und Farbe nicht verbessern"
+	},
+	"improve_contrast": {
+	  "en":"Improve contrast only",
+	  "de":"Nur Kontrast verbessern"
+	},
+	"improve_color": {
+	  "en":"Improve colour only",
+	  "de":"Nur Farbe verbessern"
+	},
+	"improve_both": {
+	  "en":"Improve contrast and colour (recommended)",
+	  "de":"Kontrast und Farbe verbessern (empfohlen)"
+	},
+	"improve_tip": {
+	  "en":"The small individual images will be adjusted in their brightness and/or colour in order to increase the contrast and/or colour reproduction of the mosaic.",
+	  "de":"Die einzelnen kleinen Bilder werden in ihrer Helligkeit und/oder Farbe angepasst, um den Kontrast und/oder die Farbwiedergabe des Mosaiks zu verbessern."
+	},
+	"segments": {
+	  "en":"Improve pattern matching (recommended)",
+	  "de":"Musteranpassung verbessern (empfohlen)"
+	},
+	"segments_tip": {
+	  "en":"The pattern of each individual image will be analysed to better match the parent image. This might have a negative impact on colour reproduction of the mosaic.",
+	  "de":"Der Aufbau jedes einzelnen Bildes wird analysiert, um die Überisntimmung mit dem Elternbild zu verbessern. Dies kann einen negativen Effekt auf die Farbtreue des Mosaiks haben."
+	},
+	"contour": {
+	  "en":"Improve contours",
+	  "de":"Konturen verbessern"
+	},
+	"contour_tip": {
+	  "en":"If active, multiple mosaic tiles will be blended at significant contour lines. This might improve the perceived sharpness of the mosaic, however the image will not be made out of nothing but rectangular shapes anymore.",
+	  "de":"Wenn aktiviert, werden an markanten Konturlinien mehrere Mosaikbilder verschmolzen. Dies kann die wahrgenommene Schärfe verbessern, das Bild ist dann aber nicht mehr nur aus rechteckigen Mosaiksteinen zusammengesetzt."
+	},
+	"preview": {
+	  "en":"Preview",
+	  "de":"Vorschau"
+	},
+	"opacity": {
+	  "en":"Opacity",
+	  "de":"Deckkraft"
+	},
+	"opacity_tip": {
+	  "en":"Reduced opacity will render the parent image more recognisable, at cost of the mosaic.",
+	  "de":"Verringerte Deckkraft macht das Elternbild auf Kosten des Mosaiks erkennbarer."
+	},
+	"save": {
+	  "en":"Save image",
+	  "de":"Bild speichern"
+	},
+	"actions": {
+	  "en":"Further actions",
+	  "de":"Weitere Aktionen"
+	},
+	"dzi": {
+	  "en":"Generate Deep Zoom Image from this mosaic",
+	  "de":"Deep Zoom Image aus diesem Mosaik generieren"
+	},
+	"redo": {
+	  "en":"Create another mosaic",
+	  "de":"Anderes Mosaik erstellen"
+	},
+	"error": {
+	  "en":"An error occurred during the creation of your mosaic.",
+	  "de":"Beim Erstellen Ihres Mosaiks ist ein Fehler aufgetreten."
+	},
+	"report": {
+	  "en":"Report this error so that it can be fixed",
+	  "de":"Diesen Fehler melden, so dass er behoben werden kann"
+	},
+	"history": {
+	  "en":"History of created mosaics",
+	  "de":"Bereits erstellte Mosaike"
+	},
+	"show_history": {
+	  "en":"View previously created mosaics",
+	  "de":"Zuvor erstellte Mosaike anzeigen"
+	}
+}

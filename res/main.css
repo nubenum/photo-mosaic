@@ -1,0 +1,93 @@
+body
+{
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	
+}
+body>div
+{
+	display:none;
+}
+body.select #step_select, body.process #step_process, body.preview #step_preview, body.history #step_history
+{
+	display:block;
+}
+.tip
+{
+	color: #606060;
+	font-size: 13px;
+	background-color: #dbdbdb;
+	border-radius: 2px;
+	padding: 4px;
+}
+.error
+{
+	background-color: #F4B400;
+}
+.progress
+{
+	background-color: #dbdbdb;
+	height:10px;
+	width:100%;
+}
+.progress div
+{
+	width:0;
+	height: 10px;
+	background-color: #16A765;
+	transition: width 2s;
+}
+.bigbutton
+{
+	height:30px;
+	width:200px;
+	margin: 10px;
+}
+table
+{
+	 table-layout: fixed;
+}
+table td
+{
+	padding: 5px;
+	width: 33%;
+	
+}
+#tasks
+{
+	list-style: none;
+	line-height: 1.5em;
+}
+#tasks li, .task
+{
+	padding-left: 30px;
+}
+.doing, .done
+{	
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: 16px;
+}
+.doing
+{
+	background-image: url(load.gif);
+}
+.done
+{
+	background-image: url(check.png);
+}
+#preview
+{
+	width:100%;
+}
+#history a
+{
+	display: inline-block;
+	width: 20%;
+	box-sizing: border-box;
+	padding: 5px;	
+}
+#history a img
+{
+	width:100%;	
+}

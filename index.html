@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>PhotoMosaic</title>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0">
+  <link href="res/main.css" type="text/css" rel="stylesheet">
+  <script src="res/main.js"></script>
+  <script src="res/digest.js"></script>
+  <script src="res/ui.js"></script>
+	
+</head>
+
+<body class="select">
+  	<div id="step_select">
+		<p id="l_welcome"></p>
+		<h3 id="l_select"></h3>
+		<table>
+			<tr>
+			<td><h4 id="l_parent"></h4><input type="file" id="parent_pick" accept=".jpg,.jpeg,.png" /></td>
+			<td><h4 id="l_source"></h4><input type="file" id="source_pick" nwdirectory /><div id="l_too_few" class="tip error" style="display:none;"></div></td>
+			</tr>
+			<tr>
+			<td class="tip" id="l_parent_tip"></td>
+			<td class="tip" id="l_source_tip"></td>
+			</tr>
+		</table>
+		<div style="text-align:center;"><button id="l_start" class="bigbutton" disabled="disabled"></button></div>
+		
+		<table style="display:none;" id="advanced">
+			<tr><td colspan="3"><h4 id="l_advanced"></h4>	</td></tr>
+			<tr><td colspan="3" id="l_advanced_tip"></td></tr>
+			<tr>
+			<td>
+				<span id="l_res"></span>: <select id="res"></select>
+			</td>
+			<td>
+				<span id="l_ratio"></span>: <select id="ratio"></select>		
+			</td>
+			<td>
+				<span id="l_thresh"></span>: <select id="thresh"></select>		
+			</td>
+			</tr>
+			<tr>
+			<td class="tip" id="l_res_tip"></td>
+			<td class="tip" id="l_ratio_tip"></td>
+			<td class="tip" id="l_thresh_tip"></td>
+			</tr>
+			<!--<tr>
+			<td colspan="3" id="l_later"></td>
+			</tr>-->
+			<tr>
+			<td><select id="improve">
+					<option value="0" id="l_no_improve"></option>
+					<option value="1" id="l_improve_contrast" selected></option>
+					<option value="3" id="l_improve_color"></option>
+					<option value="2" id="l_improve_both"></option>
+				</select></td>
+			<td><input type="checkbox" id="segments" value="segments" name="segments" checked="checked"><label for="segments" id="l_segments"></label></td>
+			<td><input type="checkbox" id="contour" value="contour" name="contour"><label for="contour" id="l_contour"></label></td>
+			</tr>
+			<tr>
+			<td class="tip" id="l_improve_tip"></td>
+			<td class="tip" id="l_segments_tip"></td>
+			<td class="tip" id="l_contour_tip"></td>
+			</tr>
+		</table>
+		<a id="l_show_history" style="display:none;" href="javascript:void(0)"></a>	
+  	</div>
+  	<div id="step_process">
+		<h3 id="l_processing"></h3>
+		<ul id="tasks">
+			<li id="l_scaling"></li>
+			<li id="l_copy"></li>
+			<li><span id="l_thumbs"></span> <span id="thumbs_progress"></span></li>
+			<li id="l_prep"></li>
+			<li id="l_gen"></li>
+			<li><span id="l_work"></span> <span id="improve_progress"></span></li>
+			<li><span id="l_merge"></span> <span id="merge_progress"></span></li>
+		</ul>	
+		<div class="tip error" id="error" style="display:none;"><span id="l_error"></span><a href="#" id="l_report" target="_blank"></a></div>	
+  	</div>
+	<div id="step_preview">
+		<h3 id="l_preview"></h3>		
+		<table style="table-layout:fixed;">
+			<tr>
+				<td style="width:75%;"><img id="preview"></td>
+				<td>
+					<h4 id="l_opacity"></h4>
+					<p id="opacity_container" class="task"><input type="range" min="10" max="100" step="10" value="80" name="opacity" id="opacity"></p>
+					<p class="tip" id="l_opacity_tip"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4 id="l_save"></h4>
+					<p id="save_container" class="task"><input type="file" id="save_pick" nwsaveas="mosaic.jpg" /></p>
+				</td>
+				<td>
+					<h4 id="l_actions"></h4>
+					<button id="dzi"><span id="dzi_container" class="task"></span><span id="l_dzi"></span></button></p>
+					<button id="l_redo"></button>
+				</td>
+			</tr>			
+		</table>
+ 	 </div>
+	 <div id="step_history">
+		<h3 id="l_history"></h3>		
+		<div id="history"></div>
+ 	 </div>
+  <span id="l_recommended" style="display:none;"></span>
+  <script>
+		var block = true;
+		translate(navigator.language);	
+		call('command', 'cleanup', 0);	
+		history(false);
+		document.getElementById('l_start').onclick = function() { start(); };
+		document.getElementById('parent_pick').onchange = function() { block = false; PARENT = this.value; call('command', 'info', 0); };
+		document.getElementById('source_pick').onchange = function() { unblock(); };
+		document.getElementById('res').onchange = function() { RES = parseInt(this.value); };
+		document.getElementById('ratio').onchange = function() { RATIO = parseInt(this.value); };
+		document.getElementById('thresh').onchange = function() { THRESH = parseInt(this.value); };
+		document.getElementById('improve').onchange = function() { IMPROVE = parseInt(this.value); };
+		document.getElementById('segments').onchange = function() { SEGMENTS = this.checked; };
+		document.getElementById('contour').onchange = function() { CONTOUR = this.checked; };
+		document.getElementById('opacity').onchange = function() { OPACITY = parseInt(this.value); updateOpacity(); };
+		document.getElementById('save_pick').onchange = function() { save(this.path); };
+		document.getElementById('dzi').onclick = function() { call('command', 'dzi', 0);	 };
+		document.getElementById('l_redo').onclick = function() { call('command', 'cleanup', 0);	document.body.className = 'select' };
+		document.getElementById('l_show_history').onclick = function() { history(true); document.body.className = 'history' };
+		
+		
+  </script>
+</body>
+</html>

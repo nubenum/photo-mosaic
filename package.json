@@ -1,0 +1,10 @@
+{
+"name":"de.nubenum.apps.nw.mosaidc",
+"main":"index.html",
+"window":{
+	"icon":"res/icon.png",
+	"title":"PhotoMosaic",
+	"width": 850,
+    "height": 650
+	}
+}
